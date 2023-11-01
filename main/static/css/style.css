@@ -659,7 +659,6 @@ button {
 .contact_section {
     width: 100%;
     float: left;
-    background-image: url(../images/contact-bg.png);
     background-size: 100%;
     background-repeat: no-repeat;
     padding-bottom: 150px;
@@ -732,25 +731,25 @@ button {
     margin-top: 30px;
 }
 
-.send_bt {
+.send_buttom {
     width: 140px;
     margin: 0 auto;
     text-align: center;
 }
 
-.send_bt a {
+.send_buttom {
     width: 100%;
     float: left;
     font-size: 18px;
     color: #ffffff;
-    background-color: #1becde;
+    background-color: #1becde83;
     padding: 7px 0px;
     text-align: center;
     margin-top: 50px;
     text-transform: uppercase;
 }
 
-.send_bt a:hover {
+.send_buttom:hover {
     background-color: #252525;
 }
 

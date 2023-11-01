@@ -7,7 +7,18 @@ def main(request):
 
 def patients(request):
     
-    patient = Patients(name='Blue', lastname='Label', height=1.8, weight=80, bloodGlucose=90, triglycerides=120)
-    patient.save()
+    print(request.POST)
 
-    return render(request, 'main/results.html', {'patients': patient})
+    if request.method == 'POST':
+
+        name = request.POST.get('name')
+        lastname = request.POST.get('lastname')
+        height = request.POST.get('height')
+        weight = request.POST.get('weight')
+        bloodGlucose = request.POST.get('bloodGlucose')
+        triglycerides = request.POST.get('triglycerides')
+
+        patient = Patients(name=name, lastname=lastname, height=height, weight=weight, bloodGlucose=bloodGlucose, triglycerides=triglycerides)
+        patient.save()
+
+    return render(request, 'main/results.html', {})

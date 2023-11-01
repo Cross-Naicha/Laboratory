@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+# Ediciones:
+{% block head_title %}<title>Pacientes</title>{% endblock head_title %}
+
+{% block main %}
+
+    <!-- contact section start -->
+    <div class="contact_section layout_padding">
+        <div class="container">
+            <h1 class="contact_taital">Pacientes</h1>
+            <div class="news_section_2">
+                <div class="row">
+                    <div class="contact_box">
+                        <form action="">
+                            <div class="search">
+                                <h1 class="book_text">Listado de Pacientes</h1>
+                                <input type="text" class="Email_text" placeholder="Apellido..." name='lastname'>
+                                <input class="search-bottom" type="submit" value="Buscar">
+                            </div>
+                        </form>
+                        <p class='patients_list'>
+                            {% if patients_list %}
+                            <ul>
+                                {% for patient in patients_list %}
+                                <li>({{patient.id}}) - {{patient.lastname}}, {{patient.name}}. Peso: {{patient.weight}}, Altura: {{patient.height}}. Glucosa: {{patient.bloodGlucose}}, Trigliceridos: {{patient.triglycerides}} </li>
+                                {% endfor %}
+                            </ul>
+                            {% else %}
+                            <p>No se encontraron coincidencias.</p>
+                            {% endif %}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- contact section end -->
+
+{% endblock main %}

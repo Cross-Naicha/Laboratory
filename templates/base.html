@@ -46,15 +46,17 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
 
-                        {% block nav %}
-                        
-                        {% endblock nav %}
-
-                        <li class="nav-item">
-                            <a class="nav-link">Medicina</a>
+                        <li class="nav-item active">
+                            <a class="nav-link">Prestaciones</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link">Novedades</a>
+                            <a class="nav-link" href={% url "index_path" %}>Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href={% url "results_path" %}>Resultados</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href={% url "patients_path" %}>Pacientes</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link">Clientes</a>

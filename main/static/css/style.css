@@ -824,6 +824,17 @@ button {
     padding-top: 20px;
 }
 
+.search {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-bottom {
+    width: 100px;
+    margin: auto;
+    margin-top: 10px;
+}
+
 #my_slider .carousel-control-prev:hover,
 #my_slider .carousel-control-next:hover,
 #my_slider .carousel-control-prev:focus,

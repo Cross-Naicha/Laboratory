@@ -3,7 +3,7 @@ from main.models import Patients
 
 # Create your views here:
 def main(request):
-    return render(request, 'main/main.html', {})
+    return render(request, 'main/index.html', {})
 
 def patients(request):
     

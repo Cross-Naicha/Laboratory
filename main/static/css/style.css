@@ -237,7 +237,7 @@ button {
 .navbar-expand-lg .navbar-nav .nav-link {
     padding-right: 20px;
     padding-left: 20px;
-    height: 100px;
+    height: 40px;
     color: #272a2a;
     font-size: 18px;
 }
@@ -303,6 +303,11 @@ button {
     padding: 10px 0px;
 }
 
+.more_bt a:hover {
+    color: #f6f8f8;
+    background-color: #252525;
+}
+
 .contact_bt {
     width: 170px;
     float: left;
@@ -314,14 +319,14 @@ button {
     float: left;
     font-size: 18px;
     color: #f6f8f8;
-    background-color: #252525;
+    background-color: #4bc5b8;
     text-align: center;
     padding: 10px 0px;
 }
 
 .contact_bt a:hover {
     color: #f6f8f8;
-    background-color: #4bc5b8;
+    background-color: #252525;
 }
 
 #main_slider .carousel-control-prev:hover,

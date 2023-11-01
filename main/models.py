@@ -8,3 +8,6 @@ class Patients(models.Model):
     weight = models.FloatField()
     bloodGlucose = models.FloatField()
     triglycerides = models.FloatField()
+
+    def __str__(self):
+        return f'{self.id} - {self.lastname}, {self.name}'

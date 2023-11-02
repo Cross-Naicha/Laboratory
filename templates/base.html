@@ -53,16 +53,16 @@
                             <a class="nav-link" href={% url "index_path" %}>Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href={% url "results_path" %}>Resultados</a>
+                            <a class="nav-link" href={% url "results_path" %}>Pacientes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href={% url "patients_path" %}>Pacientes</a>
+                            <a class="nav-link" href={% url "doctors_path" %}>Medicos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link">Clientes</a>
+                            <a class="nav-link" href={% url "patients_path" %}>Busqueda</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link">Contacto</a>
+                            <a class="nav-link" href={% url "contact_path" %}>Contacto</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"><img src={% static "images/search-icon.png" %}></a>
@@ -100,8 +100,6 @@
                     </div>
                     <div class="col-lg-3 col-sm-6">
                         <h1 class="adderss_text">Novedades</h1>
-                        <input type="text" class="Enter_text" placeholder="Ingresa tu Mail" name="Enter your Emil">
-                        <div class="subscribe_bt"><a href="#">Subscribirse</a></div>
                         <div class="social_icon">
                             <ul>
                                 <li><a href="#"><img src={% static "images/fb-icon.png" %}></a></li>
@@ -119,7 +117,7 @@
         <!-- copyright section start -->
         <div class="copyright_section">
             <div class="container">
-                <p class="copyright_text">2023 All Rights Reserved. Design by <a href="https://html.design">Free html Templates</a> powered by Laboratorios Nicolson</p>
+                <p class="copyright_text">2023 All Rights Reserved. Design by <a href="https://html.design">Free html Templates</a> <b>powered</b> by Centro Nicolson & <b>CoderHouse</b></p>
             </div>
         </div>
         <!-- copyright section end -->

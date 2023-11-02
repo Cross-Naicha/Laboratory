@@ -1,27 +1,25 @@
 {% extends "base.html" %}
 
 # Ediciones:
-{% block head_title %}<title>Registro de Pacientes</title>{% endblock head_title %}
+{% block head_title %}<title>Registro de Medicos</title>{% endblock head_title %}
 
 {% block main %}
 
     <!-- contact section start -->
     <div class="contact_section layout_padding">
         <div class="container">
-            <h1 class="contact_taital">Registro de Pacientes</h1>
+            <h1 class="contact_taital">Registro de Medicos</h1>
             <div class="news_section_2">
                 <div class="row">
                     <div class="contact_box">
-                        <h1 class="book_text">Indique los valores obtenidos</h1>
+                        <h1 class="book_text">Ingrese sus datos</h1>
+                        <p>Felicidades por su token! Para finalizar su inscripcion al sistema, indique los siguientes datos!</p>
                         <form action="" method="POST">
                             {% csrf_token %}
                             {% comment %} Por defecto, la etiqueta 'form' utiliza el method GET  {% endcomment %}
                             <input type="text" class="Email_text" placeholder="Nombre" name="name">
                             <input type="text" class="Email_text" placeholder="Apellido" name="lastname">
-                            <input type="text" class="Email_text" placeholder="Peso (Kg)" name="weight">
-                            <input type="text" class="Email_text" placeholder="Altura (Mts)" name="height">
-                            <input type="text" class="Email_text" placeholder="Glucemia (mg/dL)" name="bloodGlucose">
-                            <input type="text" class="Email_text" placeholder="Trigliceridos (mg/dL)" name="triglycerides">
+                            <input type="text" class="Email_text" placeholder="Especialidad" name="field">
                             <input type="submit" class="send_buttom" value="Enviar">
                         </form>
                     </div>

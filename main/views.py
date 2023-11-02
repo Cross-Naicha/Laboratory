@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from main.models import Patients
+from main.models import Patients, Doctors, Suscriptors
 # from main.forms import Patient
 
 # Create your views here:
@@ -7,10 +7,6 @@ def main(request):
     return render(request, 'main/index.html', {})
 
 def patients(request):
-    
-    # Version HTML
-
-    print(request.POST)
 
     if request.method == 'POST':
 
@@ -38,3 +34,31 @@ def patients_view(request):
         patients_list = Patients.objects.all()
 
     return render(request, 'main/patients.html', {'patients_list': patients_list})
+
+def doctors(request):
+    
+    if request.method == 'POST':
+
+        name = request.POST.get('name')
+        lastname = request.POST.get('lastname')
+        field = request.POST.get('field')
+
+        doctor = Doctors(name=name, lastname=lastname, field=field)
+        doctor.save()
+
+        return redirect('index_path')
+
+    return render(request, 'main/doctors.html', {})
+
+def suscriptors(request):
+    
+    if request.method == 'POST':
+
+        email = request.POST.get('email')
+
+        suscriptor = Suscriptors(email=email)
+        suscriptor.save()
+
+        return redirect('index_path')
+
+    return render(request, 'main/contact.html', {})

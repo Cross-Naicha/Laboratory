@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+# Ediciones:
+{% block head_title %}<title>Newsletter</title>{% endblock head_title %}
+
+{% block main %}
+
+    <!-- contact section start -->
+    <div class="contact_section layout_padding">
+        <div class="container">
+            <h1 class="contact_taital">Conctacto</h1>
+            <div class="news_section_2">
+                <div class="row">
+                    <div class="contact_box">
+                        <h1 class="book_text">Mantenete al tanto de las novedades!</h1>
+                        <form action="" method="POST">
+                            {% csrf_token %}
+                            {% comment %} Por defecto, la etiqueta 'form' utiliza el method GET  {% endcomment %}
+                            <input type="text" class="Email_text" placeholder="Email..." name="email">
+                            <input type="submit" class="send_buttom" value="Suscribirme">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- contact section end -->
+
+{% endblock main %}

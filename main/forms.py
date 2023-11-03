@@ -3,7 +3,7 @@ from django import forms
 # Create your forms here:
 
 # Pacientes:
-class Patients(forms.Form):
+class Patients_Create(forms.Form):
     name = forms.CharField(max_length=30)
     lastname = forms.CharField(max_length=30)
     weight = forms.CharField(max_length=10)
@@ -11,23 +11,14 @@ class Patients(forms.Form):
     bloodGlucose = forms.FloatField()
     triglycerides = forms.FloatField()
 
-class Patients_Create(Patients):
-    ...
-
 # Medicos:
 
-class Doctors(forms.Form):
+class Doctors_Create(forms.Form):
     name = forms.CharField(max_length=30)
     lastname = forms.CharField(max_length=30)
     field = forms.CharField(max_length=30)
 
-class Doctors_Create(Doctors):
-    ...
-
 # Suscriptores:
 
-class Suscriptors(forms.Form):
+class Suscriptors_Create(forms.Form):
     email = forms.CharField(max_length=30)
-
-class Suscriptors_Create(Suscriptors):
-    ...

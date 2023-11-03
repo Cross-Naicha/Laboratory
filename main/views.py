@@ -6,6 +6,7 @@ from main.forms import Patients_Create, Doctors_Create, Suscriptors_Create
 def main(request):
     return render(request, 'main/index.html', {})
 
+# Patients
 def patients(request):
 
     if request.method == 'POST':
@@ -28,9 +29,16 @@ def patients(request):
 
 def patients_view(request):
 
+    search_target = request.GET.get('lastname')
 
-    return render(request, 'main/patients.html', {})
+    if search_target:
+        list_of_patients = Patients.objects.filter(lastname__icontains=search_target)
+    else:
+        list_of_patients = Patients.objects.all()
 
+    return render(request, 'main/patients.html', {'list_of_patients': list_of_patients})
+
+# Doctors
 def doctors(request):
     
     if request.method == 'POST':
@@ -48,6 +56,7 @@ def doctors(request):
     doctors_form = Doctors_Create()
     return render(request, 'main/doctors.html', {'doctors_form': doctors_form})
 
+# Suscriptors
 def suscriptors(request):
     
     if request.method == 'POST':

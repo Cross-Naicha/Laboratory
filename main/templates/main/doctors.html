@@ -14,14 +14,19 @@
                     <div class="contact_box">
                         <h1 class="book_text">Ingrese sus datos</h1>
                         <p>Felicidades por su token! Para finalizar su inscripcion al sistema, indique los siguientes datos!</p>
+                        
+                        {% comment %} DJANGO FORMS {% endcomment %}
+                        
                         <form action="" method="POST">
                             {% csrf_token %}
                             {% comment %} Por defecto, la etiqueta 'form' utiliza el method GET  {% endcomment %}
-                            <input type="text" class="Email_text" placeholder="Nombre" name="name">
-                            <input type="text" class="Email_text" placeholder="Apellido" name="lastname">
-                            <input type="text" class="Email_text" placeholder="Especialidad" name="field">
-                            <input type="submit" class="send_buttom" value="Enviar">
+                            <div class="Email_text"> Nombre: {{doctors_form.name}}</div>
+                            <div class="Email_text"> Apellido: {{doctors_form.lastname}}</div>
+                            <div class="Email_text"> Especialidad: {{doctors_form.field}}</div>
+                            <input class="send_buttom" type="submit" value="Crear">
                         </form>
+
+
                     </div>
                 </div>
             </div>

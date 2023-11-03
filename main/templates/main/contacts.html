@@ -13,12 +13,17 @@
                 <div class="row">
                     <div class="contact_box">
                         <h1 class="book_text">Mantenete al tanto de las novedades!</h1>
+                        
+                        {% comment %} DJANGO FORMS {% endcomment %}
+                        
                         <form action="" method="POST">
                             {% csrf_token %}
                             {% comment %} Por defecto, la etiqueta 'form' utiliza el method GET  {% endcomment %}
-                            <input type="text" class="Email_text" placeholder="Email..." name="email">
-                            <input type="submit" class="send_buttom" value="Suscribirme">
+                            <div class="Email_text"> E-Mail: {{suscriptors_form.email}}</div>
+                            <input class="send_buttom" type="submit" value="Crear">
                         </form>
+
+
                     </div>
                 </div>
             </div>

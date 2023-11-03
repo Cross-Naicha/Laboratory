@@ -13,17 +13,22 @@
                 <div class="row">
                     <div class="contact_box">
                         <h1 class="book_text">Indique los valores obtenidos</h1>
+                        
+                        {% comment %} FORMULARIO DJANGO {% endcomment %}
+                        
                         <form action="" method="POST">
                             {% csrf_token %}
                             {% comment %} Por defecto, la etiqueta 'form' utiliza el method GET  {% endcomment %}
-                            <input type="text" class="Email_text" placeholder="Nombre" name="name">
-                            <input type="text" class="Email_text" placeholder="Apellido" name="lastname">
-                            <input type="text" class="Email_text" placeholder="Peso (Kg)" name="weight">
-                            <input type="text" class="Email_text" placeholder="Altura (Mts)" name="height">
-                            <input type="text" class="Email_text" placeholder="Glucemia (mg/dL)" name="bloodGlucose">
-                            <input type="text" class="Email_text" placeholder="Trigliceridos (mg/dL)" name="triglycerides">
-                            <input type="submit" class="send_buttom" value="Enviar">
+                            <div class="Email_text"> Nombre: {{patients_form.name}}</div>
+                            <div class="Email_text"> Apellido: {{patients_form.lastname}}</div>
+                            <div class="Email_text"> Peso: {{patients_form.weight}}</div>
+                            <div class="Email_text"> Altura: {{patients_form.height}}</div>
+                            <div class="Email_text"> Glucemia (mg/dL): {{patients_form.bloodGlucose}}</div>
+                            <div class="Email_text"> Trigliceridemia: {{patients_form.triglycerides}}</div>
+                            <input class="send_buttom" type="submit" value="Crear">
                         </form>
+
+                        
                     </div>
                 </div>
             </div>

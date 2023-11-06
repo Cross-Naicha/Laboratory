@@ -43,7 +43,7 @@ def patients_delete(request, patient_id):
     patient_to_delete = Patients.objects.get(id=patient_id)
     patient_to_delete.delete()
 
-    return redirect('patients_path')
+    return redirect('patients_search_path')
 
 def patients_modify(request, patient_id):
 
@@ -62,7 +62,7 @@ def patients_modify(request, patient_id):
             patient_to_modify.triglycerides = updated_form.get('triglycerides')           
 
             patient_to_modify.save()
-            return redirect('patients_path')
+            return redirect('patients_search_path')
 
     updated_form = Patients_Modify(initial={'name':patient_to_modify.name, 'lastname':patient_to_modify.lastname, 'weight':patient_to_modify.weight, 'height':patient_to_modify.height, 'bloodGlucose':patient_to_modify.bloodGlucose, 'triglycerides':patient_to_modify.triglycerides})
     return render(request, 'main/patients-modify.html', {'updated_form':updated_form})

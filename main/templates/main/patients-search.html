@@ -16,11 +16,11 @@
 
         <p class='patients_list'>
             <br>
-            <p>(Id) Apellido, Nombre. Peso y Altura. Glucemia y Trigliceridemia.</p>
+            <p>(Id) Apellido, Nombre. </p>
             {% if list_of_patients %}
             <ul>
                 {% for patient in list_of_patients %}
-                <li>({{patient.id}}) - <b>{{patient.lastname}}</b>, {{patient.name}}. Peso: {{patient.weight}}, Altura: {{patient.height}}. Glucosa: {{patient.bloodGlucose}}, Trigliceridos: {{patient.triglycerides}} </li>
+                <li>({{patient.id}}) - <b>{{patient.lastname}}</b>, {{patient.name}} </li>
                 <li> | <a href={% url "patients_details_path" patient.id %}>Detalles</a> | <a href={% url "patients_modify_path" patient.id %}>Modificar</a> | <a href={% url "patients_delete_path" patient.id %}>Eliminar</a> |</li>
                 <br>
                 {% endfor %}

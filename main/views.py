@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from main.models import Patients, Doctors, Suscriptors
-from main.forms import Patients_Create, Patients_Modify, Doctors_Create, Suscriptors_Create
+from main.models import Patients, Doctors
+from main.forms import Patients_Create, Patients_Modify, Doctors_Create
 
 # Create your views here:
 def main(request):
@@ -89,19 +89,3 @@ def doctors(request):
 
     doctors_form = Doctors_Create()
     return render(request, 'main/doctors.html', {'doctors_form': doctors_form})
-
-# Suscriptors
-def suscriptors(request):
-    
-    if request.method == 'POST':
-        suscriptors_form = Suscriptors_Create(request.POST)
-        if suscriptors_form.is_valid():
-            cleaned_suscriptors_form = suscriptors_form.cleaned_data
-
-            email = cleaned_suscriptors_form.get('email')
-
-            suscriptors = Suscriptors(email=email)
-            suscriptors.save()
-
-    suscriptors_form = Suscriptors_Create()
-    return render(request, 'main/contacts.html', {'suscriptors_form': suscriptors_form})

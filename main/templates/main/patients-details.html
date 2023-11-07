@@ -2,14 +2,14 @@
 
 {% block head_title %}<title>Pacientes: Detalles</title>{% endblock head_title %}
 
-{% block h1_title %}Paciente: {{detailed_patient.id}} {% endblock h1_title %}
-{% block h1_subtitle %} {{detailed_patient.lastname}}, {{detailed_patient.name}} {% endblock h1_subtitle %}
+{% block h1_title %}Paciente: {{patients.id}} {% endblock h1_title %}
+{% block h1_subtitle %} {{patients.lastname}}, {{patients.name}} {% endblock h1_subtitle %}
 
 {% block form %}
 <ul>
-    <li class='detailed_patient'> Altura (mts.): {{detailed_patient.height}} </li>
-    <li class='detailed_patient'> Peso (kg.): {{detailed_patient.weight}} </li>
-    <li class='detailed_patient'> Glucemia (mg/dL): {{detailed_patient.bloodGlucose}} </li>
-    <li class='detailed_patient'> Trigliceridemia (mg/dL): {{detailed_patient.triglycerides}} </li>
+    <li class='detailed_patient'> Altura (mts.): {{patients.height}} </li>
+    <li class='detailed_patient'> Peso (kg.): {{patients.weight}} </li>
+    <li class='detailed_patient'> Glucemia (mg/dL): {{patients.bloodGlucose}} </li>
+    <li class='detailed_patient'> Trigliceridemia (mg/dL): {{patients.triglycerides}} </li>
 </ul>
 {% endblock form %}

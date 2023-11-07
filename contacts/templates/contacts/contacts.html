@@ -19,7 +19,7 @@
                         <form action="" method="POST">
                             {% csrf_token %}
                             {% comment %} Por defecto, la etiqueta 'form' utiliza el method GET  {% endcomment %}
-                            <div class="Email_text"> E-Mail: {{suscriptors_form.email}}</div>
+                            <div class="Email_text"> E-Mail: {{form.email}}</div>
                             <input class="send_buttom" type="submit" value="Crear">
                         </form>
 

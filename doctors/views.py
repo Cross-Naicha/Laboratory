@@ -1,14 +1,11 @@
 from django.shortcuts import render, redirect
+from django.urls import reverse_lazy
 
 from doctors.models import Doctors
 # from doctors.forms import Doctors_Create
 
-from django.views.generic.list import ListView
+from django.views.generic.edit import CreateView
 
-class Doctors_View(ListView):
-    model = Doctors
-    context_object_name = 'list_of_patients'
-    template_name = 'doctors/doctors-search.html'
 
 # def doctors(request):
     
@@ -26,4 +23,10 @@ class Doctors_View(ListView):
 
 #     doctors_form = Doctors_Create()
 #     return render(request, 'doctors/doctors.html', {'doctors_form': doctors_form})
+
+class Doctors_Create(CreateView):
+    model = Doctors
+    template_name = "doctors/doctors.html"
+    fields = ['name', 'lastname', 'field']
+    success_url = reverse_lazy('doctors_path')
 

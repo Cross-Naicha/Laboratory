@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
+
 from main.models import Patients
 # from main.forms import Patients_Create, Patients_Modify
 
@@ -38,21 +39,21 @@ class Patients_Create(CreateView):
     fields = ['name', 'lastname', 'weight', 'height', 'bloodGlucose', 'triglycerides']
     success_url = reverse_lazy('patients_create_path')
 
-# def patients_view(request):
+def patients_view(request):
 
-#     search_target = request.GET.get('lastname')
+    search_target = request.GET.get('lastname')
 
-#     if search_target:
-#         list_of_patients = Patients.objects.filter(lastname__icontains=search_target)
-#     else:
-#         list_of_patients = Patients.objects.all()
+    if search_target:
+        list_of_patients = Patients.objects.filter(lastname__icontains=search_target)
+    else:
+        list_of_patients = Patients.objects.all()
 
-#     return render(request, 'main/patients-search.html', {'list_of_patients': list_of_patients})
+    return render(request, 'main/patients-search.html', {'list_of_patients': list_of_patients})
 
-class Patients_View(ListView):
-    model = Patients
-    context_object_name = 'list_of_patients'
-    template_name = 'main/patients-search.html'
+# class Patients_View(ListView):
+#     model = Patients
+#     context_object_name = 'list_of_patients'
+#     template_name = 'main/patients-search.html'
 
 
 # def patients_delete(request, patient_id):

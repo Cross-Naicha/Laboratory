@@ -1,0 +1,10 @@
+{% extends "base-index.html" %}
+
+{% block head_title %}<title>Medicos</title>{% endblock head_title %}
+
+{% block index_type %}Medicos{% endblock index_type %}
+
+{% block bottons_index %}
+    <div class="more_bt"><a href={% url "patients_create_path" %}>Registrar</a></div>
+    <div class="contact_bt"><a href={% url "patients_search_path" %}>Buscar</a></div>
+{% endblock bottons_index %}

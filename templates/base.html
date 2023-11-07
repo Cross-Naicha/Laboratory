@@ -55,10 +55,7 @@
                     
                         {% if request.user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link"> {{request.user.username}} </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href={% url "patients_create_path" %}>Pacientes</a>
+                            <a class="nav-link" href={% url "patients_index_path" %}>Pacientes</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href={% url "doctors_path" %}>Medicos</a>
@@ -71,6 +68,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"><img src={% static "images/search-icon.png" %}></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"> <strong>User:</strong>{{request.user.username}} </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href={% url "accounts_logout_path" %}>Salir</a>

@@ -1,15 +1,15 @@
 from django import forms
 
-class Patients_Blueprint(forms.Form):
-    name = forms.CharField(max_length=30)
-    lastname = forms.CharField(max_length=30)
-    weight = forms.CharField(max_length=10)
-    height = forms.FloatField()
-    bloodGlucose = forms.FloatField()
-    triglycerides = forms.FloatField()
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
-class Patients_Create(Patients_Blueprint):
-    ...
+class User_Registration(UserCreationForm):
 
-class Patients_Modify(Patients_Blueprint):
-    ...
+    email = forms.EmailField()
+    password1 = forms.CharField(widget=forms.PasswordInput)
+    password2 = forms.CharField(widget=forms.PasswordInput)
+
+    class Meta:
+        model = User
+        fields = ['username', 'email', 'password1', 'password2']
+        help_texts = {key: '' for key in fields}

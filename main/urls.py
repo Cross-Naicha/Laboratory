@@ -1,6 +1,7 @@
 from django.urls import path
 
 from main.views import main, login, register
+from main.forms import User_Registration
 from django.contrib.auth.views import LogoutView
 
 

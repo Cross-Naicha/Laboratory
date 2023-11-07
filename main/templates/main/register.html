@@ -5,12 +5,19 @@
 {% block h1_title %}Bienvenido!{{detailed_patient.id}} {% endblock h1_title %}
 
 {% block form %}
-
+<h2>Ingresa tu nuevo usuario y contraseña!</h2>
 <form action="" method="POST">
     {% csrf_token %}
-    <div class="Email_text"> Usuario: {{authentication_form.username}} </div>
-    <div class="Email_text"> Contraseña: {{authentication_form.password}} </div>
-    <input class="send_buttom" type="submit" value="Iniciar Sesión">
+    
+    <table>
+        {{registration_form}}
+    </table>
+    
+    {% comment %} <div class="Email_text"> Usuario: {{registration_form.username}} </div>
+    <div class="Email_text"> E-Mail: {{registration_form.email}} </div>
+    <div class="Email_text"> Contraseña: {{registration_form.password1}} </div>
+    <div class="Email_text"> Repetir Contraseña: {{registration_form.password2}} </div> {% endcomment %}
+    <input class="send_buttom" type="submit" value="Registrarme">
 </form>
 
 {% endblock form %}

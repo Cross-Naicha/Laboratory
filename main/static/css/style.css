@@ -234,6 +234,14 @@ button {
     background-color: transparent !important;
 }
 
+.nav-pseudolink {
+    padding-right: 20px;
+    padding-left: 20px;
+    height: 40px;
+    color: #272a2a;
+    font-size: 18px;
+}
+
 .navbar-expand-lg .navbar-nav .nav-link {
     padding-right: 20px;
     padding-left: 20px;
@@ -242,7 +250,7 @@ button {
     font-size: 18px;
 }
 .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
-    color: white;
+    color: #15e4d0;
 }
 
 .navbar {

@@ -52,6 +52,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href={% url "index_path" %}>Inicio</a>
                         </li>
+                    
+                        {% if request.user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link"> {{request.user.username}} </a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href={% url "patients_create_path" %}>Pacientes</a>
                         </li>
@@ -67,6 +72,21 @@
                         <li class="nav-item">
                             <a class="nav-link"><img src={% static "images/search-icon.png" %}></a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href={% url "accounts_logout_path" %}>Salir</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href=>Sesión no iniciada!</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href={% url "accounts_register_path" %}>Registrarse</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href={% url "accounts_login_path" %}>Iniciar</a>
+                        </li>
+                        {% endif %}
+
                     </ul>
                 </div>
             </nav>

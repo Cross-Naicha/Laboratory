@@ -1,0 +1,19 @@
+{% extends "base-patients.html" %}
+
+{% block head_title %}<title>Registro de Pacientes</title>{% endblock head_title %}
+
+{% block h1_title %}Registro de Pacientes{{detailed_patient.id}} {% endblock h1_title %}
+{% block h1_subtitle %} Indique los valores obtenidos {% endblock h1_subtitle %}
+
+{% block form %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {% comment %} Por defecto, la etiqueta 'form' utiliza el method GET  {% endcomment %}
+
+    <div class="Email_text"> Usuario: {{form.name}} </div>
+    <div class="Email_text"> Contraseña: {{form.lastname}} </div>
+    <input class="send_buttom" type="submit" value="Crear">
+</form>
+
+{% endblock form %}

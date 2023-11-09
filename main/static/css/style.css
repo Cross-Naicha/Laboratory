@@ -234,6 +234,17 @@ button {
     background-color: transparent !important;
 }
 
+.user-image-name {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.avatar {
+    width: 35px;
+    padding-top: 5px;
+    border-radius: 50%;
+}
+
 .nav-pseudolink {
     padding-right: 20px;
     padding-left: 20px;

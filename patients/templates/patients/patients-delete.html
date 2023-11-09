@@ -10,5 +10,6 @@
     {% csrf_token %}
     <input class="send_buttom" type="submit" value="Confirmar">
 </form>
+    <a class="back_buttom" href={% url "patients_search_path" %}>Cancelar</a>
 
 {% endblock form %}

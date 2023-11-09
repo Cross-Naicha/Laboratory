@@ -67,8 +67,11 @@
                             <a class="nav-link"><img src={% static "images/search-icon.png" %}></a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href={% url "accounts_view_path" %}> <strong>User:</strong>{{request.user.username}} </a>
+                        <li class="user-image-name">
+                            <a class="nav-link" href={% url "accounts_view_path" %}> <strong>User:</strong>{{request.user.username}}</a>
+                            {% if request.user.otheruserdata.avatar %}
+                                <img class="avatar" src="{{request.user.otheruserdata.avatar.url}}" alt="avatar">
+                            {% endif %}
                         </li>
 
                         <li class="nav-item">

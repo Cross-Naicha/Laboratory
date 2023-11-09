@@ -23,7 +23,8 @@ class User_Edition(UserChangeForm):
     last_name = forms.CharField(label= 'Apellido', required=False)
     institution = forms.CharField(max_length=100, required=False)
     institutional_mail = forms.EmailField(required=False)
+    avatar = forms.ImageField(required=False)
 
     class Meta:
         model = User
-        fields = ['email', 'first_name', 'last_name']
+        fields = ['email', 'first_name', 'last_name', 'avatar']

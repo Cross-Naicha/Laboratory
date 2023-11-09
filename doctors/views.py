@@ -23,8 +23,13 @@ def doctors_create(request):
             doctors = Doctors(name=name, lastname=lastname, field=field)
             doctors.save()
 
+            return redirect('doctors_create_success')
+
     doctors_form = Doctors_Create()
     return render(request, 'doctors/doctors-create.html', {'doctors_form': doctors_form})
+
+def doctors_create_success(request):
+    return render(request, 'doctors/doctors-create-success.html')
 
 
 def doctors_view(request):

@@ -51,22 +51,26 @@ def profile_view(request):
 def profile_edit_user(request):
 
     otheruserdata = request.user.otheruserdata
-    edition_form = User_Edition(initial= {'institution': otheruserdata.institution, 'institutional_mail': otheruserdata.institutional_mail}, instance=request.user)
+    edition_form = User_Edition(initial= {'institution': otheruserdata.institution, 'institutional_mail': otheruserdata.institutional_mail, 'avatar': otheruserdata.avatar}, instance=request.user)
 
     if request.method == 'POST':
-        edition_form = User_Edition(request.POST, instance=request.user)
+        edition_form = User_Edition(request.POST, request.FILES, instance=request.user)
         if edition_form.is_valid():
             
             institution = edition_form.cleaned_data.get('institution')
             institutional_mail = edition_form.cleaned_data.get('institutional_mail')
+            avatar = edition_form.cleaned_data.get('avatar')
 
             if institution:
                 otheruserdata.institution = institution
-                otheruserdata.save()
 
             if institutional_mail:
                 otheruserdata.institutional_mail = institutional_mail
-                otheruserdata.save()
+            
+            if avatar:
+                otheruserdata.avatar = avatar
+            
+            otheruserdata.save()
             
             edition_form.save()
 

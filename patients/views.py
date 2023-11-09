@@ -15,7 +15,10 @@ class Patients_Create(LoginRequiredMixin, CreateView):
     model = Patients
     template_name = "patients/patients-create.html"
     fields = ['name', 'lastname', 'weight', 'height', 'bloodGlucose', 'triglycerides']
-    success_url = reverse_lazy('patients_create_path')
+    success_url = reverse_lazy('patients_create_success_path')
+
+def patients_create_success(request):
+    return render(request, 'patients/patients-create-success.html')
 
 def patients_view(request):
 

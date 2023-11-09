@@ -1,0 +1,9 @@
+{% extends "base-patients.html" %}
+
+{% block head_title %}<title>Pacientes</title>{% endblock head_title %}
+
+{% block h1_title %}Paciente añadido con Exito!{% endblock h1_title %}
+
+{% block h1_subtitle %}
+<a class="back_buttom" href={% url "patients_index_path" %}>Volver</a>
+{% endblock h1_subtitle %}

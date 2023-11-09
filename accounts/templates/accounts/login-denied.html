@@ -3,4 +3,7 @@
 {% block head_title %}<title>Iniciar Sesión</title>{% endblock head_title %}
 
 {% block h1_title %}Usuario o Contraseña Invalido/Inexistente{{detailed_patient.id}} {% endblock h1_title %}
-{% block h1_subtitle %}Bienvenido?{% endblock h1_subtitle %}
+{% block h1_subtitle %}
+Bienvenido?
+<a class="back_buttom" href={% url "accounts_login_path" %}>Volver a intentar</a>
+{% endblock h1_subtitle %}

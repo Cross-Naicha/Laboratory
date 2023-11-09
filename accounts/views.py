@@ -5,6 +5,7 @@ from django.contrib.auth import authenticate, login as auth_login
 from django.contrib.auth.views import PasswordChangeView 
 
 from accounts.forms import User_Registration, User_Edition
+from accounts.models import OtherUserData
 
 
 def login(request):
@@ -20,6 +21,8 @@ def login(request):
             active_user = authenticate(username=user, password=password)
 
             auth_login(request, active_user)
+
+            OtherUserData.objects.get_or_create(user=request.user)
 
             return redirect('index_path')
         else:
@@ -47,11 +50,24 @@ def profile_view(request):
 
 def profile_edit_user(request):
 
-    edition_form = User_Edition(instance=request.user)
+    otheruserdata = request.user.otheruserdata
+    edition_form = User_Edition(initial= {'institution': otheruserdata.institution, 'institutional_mail': otheruserdata.institutional_mail}, instance=request.user)
 
     if request.method == 'POST':
         edition_form = User_Edition(request.POST, instance=request.user)
         if edition_form.is_valid():
+            
+            institution = edition_form.cleaned_data.get('institution')
+            institutional_mail = edition_form.cleaned_data.get('institutional_mail')
+
+            if institution:
+                otheruserdata.institution = institution
+                otheruserdata.save()
+
+            if institutional_mail:
+                otheruserdata.institutional_mail = institutional_mail
+                otheruserdata.save()
+            
             edition_form.save()
 
             return redirect('accounts_view_path')

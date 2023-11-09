@@ -10,6 +10,9 @@
     <li class='detailed_patient'> E-Mail: {{users_form.email}} </li>
     <li class='detailed_patient'> Nombre: {{users_form.first_name}} </li>
     <li class='detailed_patient'> Apellido: {{users_form.last_name}} </li>
+    <br>
+    <li class='detailed_patient'> Institución: {{request.user.otheruserdata.institution}} </li>
+    <li class='detailed_patient'> E-Mail Institucional: {{request.user.otheruserdata.institutional_mail}} </li>
 </ul>
 <br>
 <div class="contact_bt_large"><a href={% url "accounts_edit_path" %}>Editar Perfil</a></div>

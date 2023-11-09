@@ -1,0 +1,12 @@
+{% extends "base-patients.html" %}
+
+{% block head_title %}<title>Medicos: Detalles</title>{% endblock head_title %}
+
+{% block h1_title %}Medico: {{detailed_doctor.id}} {% endblock h1_title %}
+{% block h1_subtitle %} {{detailed_doctor.lastname}}, {{detailed_doctor.name}} {% endblock h1_subtitle %}
+
+{% block form %}
+<ul>
+    <li class='detailed_patient'> Especialidad: {{detailed_doctor.field}} </li>
+</ul>
+{% endblock form %}

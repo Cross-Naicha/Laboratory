@@ -1,0 +1,20 @@
+{% extends "base-patients.html" %}
+
+{% block head_title %} <title>Modificar</title> {% endblock head_title %}
+{% block h1_title %} Modificar Medico {% endblock h1_title %}
+{% block h1_subtitle %} Indique las modificaciones {% endblock h1_subtitle %}
+
+{% block form %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {% comment %} Por defecto, la etiqueta 'form' utiliza el method GET  {% endcomment %}
+
+    <div class="Email_text"> Nombre: {{updated_form.name}}</div>
+    <div class="Email_text"> Apellido: {{updated_form.lastname}}</div>
+    <div class="Email_text"> Especialidad: {{updated_form.field}}</div>
+
+    <input class="send_buttom" type="submit" value="Modificar">
+</form>
+
+{% endblock form %}

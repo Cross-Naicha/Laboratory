@@ -1,0 +1,36 @@
+{% extends "base-patients.html" %}
+
+{% block head_title %}<title>Busqueda de Medicos</title>{% endblock head_title %}
+
+{% block form %}
+
+    <div class="contact_box">
+
+        <form action="">
+            <div class="search">
+                <h1 class="book_text">Listado de Medicos</h1>
+                <input type="text" class="Email_text" placeholder="Especialidad..." name='field'>
+                <input class="search-bottom" type="submit" value="Buscar">
+            </div>
+        </form>
+
+        <p class='patients_list'>
+            <br>
+            <p>(Id) Apellido, Nombre: Especialidad</p>
+            {% if list_of_doctors %}
+            <ul>
+                {% for doctor in list_of_doctors %}
+                <li>({{doctor.id}}) - <b>{{doctor.lastname}}</b>, {{doctor.name}}: {{doctor.field}} </li>
+                <li> | <a href={% url "doctors_details_path" doctor.id %}>Detalles</a> | <a href={% url "doctors_modify_path" doctor.id %}>Modificar</a> | <a href={% url "doctors_delete_path" doctor.id %}>Eliminar</a> |</li>
+                <br>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p>No se encontraron coincidencias.</p>
+            {% endif %}
+        </p>
+
+    </div>
+
+{% block back_button %}<a class="back_buttom" href={% url "doctors_index_path" %}>Volver</a>{% endblock back_button %}
+{% endblock form %}

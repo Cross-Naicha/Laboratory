@@ -1,0 +1,14 @@
+{% extends "base-patients.html" %}
+
+{% block head_title %} <title>Eliminar </title> {% endblock head_title %}
+{% block h1_title %} Eliminar? {% endblock h1_title %}
+{% block h1_subtitle %} Medico <b>{{doctor.id}}</b> {% endblock h1_subtitle %}
+
+{% block form %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <input class="send_buttom" type="submit" value="Confirmar">
+</form>
+
+{% endblock form %}

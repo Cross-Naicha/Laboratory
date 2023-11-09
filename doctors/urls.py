@@ -1,9 +1,13 @@
 from django.urls import path
 
-# from doctors.views import doctors
+from doctors.views import doctors_index, doctors_create, doctors_view, doctors_details, doctors_update, doctors_delete
 
-from doctors.views import Doctors_Create
 
 urlpatterns = [
-    path('doctors/', Doctors_Create.as_view(), name='doctors_path'),
+    path('doctors/', doctors_index, name='doctors_index_path'),
+    path('doctors/create/', doctors_create, name='doctors_create_path'),
+    path('doctors/search/', doctors_view, name='doctors_search_path'),
+    path('doctors/<int:doctor_id>/delete/', doctors_delete, name='doctors_delete_path'),
+    path('doctors/<int:doctor_id>/modify/', doctors_update, name='doctors_modify_path'),
+    path('doctors/<int:doctor_id>/details/', doctors_details, name='doctors_details_path')
 ]

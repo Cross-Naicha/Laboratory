@@ -761,6 +761,28 @@ button {
     background-color: #252525;
 }
 
+.back_buttom {
+    width: 140px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.back_buttom {
+    width: 100%;
+    float: left;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: black;
+    padding: 7px 0px;
+    text-align: center;
+    margin-top: 50px;
+    text-transform: uppercase;
+}
+
+.back_buttom:hover {
+    background-color: #252525;
+}
+
 .client_section {
     width: 100%;
     float: left;

@@ -2,7 +2,12 @@
 
 {% block head_title %}<title>Usuarios: Detalles</title>{% endblock head_title %}
 
-{% block h1_title %}Usuario: {{users_form.username}} {% endblock h1_title %}
+{% block h1_title %}
+    Usuario: {{users_form.username}}
+    {% if request.user.otheruserdata.avatar %}
+        <img class="avatar_menu" src="{{request.user.otheruserdata.avatar.url}}" alt="avatar">
+    {% endif %}
+{% endblock h1_title %}
 {% block h1_subtitle %} {{users_form.lastname}}, {{users_form.name}} {% endblock h1_subtitle %}
 
 {% block form %}

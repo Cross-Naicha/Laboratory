@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect
-from django.urls import reverse_lazy
 
 from doctors.models import Doctors
 from doctors.forms import Doctors_Create, Doctors_Update

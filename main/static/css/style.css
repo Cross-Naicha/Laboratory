@@ -337,6 +337,27 @@ button {
     background-color: #252525;
 }
 
+.contact_bt_large {
+    width: 280px;
+    float: left;
+    margin-left: 15px;
+}
+
+.contact_bt_large a {
+    width: 100%;
+    float: left;
+    font-size: 18px;
+    color: #f6f8f8;
+    background-color: #4bc5b8;
+    text-align: center;
+    padding: 10px 0px;
+}
+
+.contact_bt_large a:hover {
+    color: #f6f8f8;
+    background-color: #252525;
+}
+
 #main_slider .carousel-control-prev:hover,
 #main_slider .carousel-control-next:hover,
 #main_slider .carousel-control-prev:focus,

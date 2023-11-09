@@ -5,11 +5,13 @@ from patients.models import Patients
 
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.detail import DetailView
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 
 def patients_index(request):
     return render(request, 'patients/patients-index.html', {})
 
-class Patients_Create(CreateView):
+class Patients_Create(LoginRequiredMixin, CreateView):
     model = Patients
     template_name = "patients/patients-create.html"
     fields = ['name', 'lastname', 'weight', 'height', 'bloodGlucose', 'triglycerides']
@@ -27,13 +29,13 @@ def patients_view(request):
     return render(request, 'patients/patients-search.html', {'list_of_patients': list_of_patients})
 
 
-class Patients_Delete(DeleteView):
+class Patients_Delete(LoginRequiredMixin, DeleteView):
     model = Patients
     template_name = "patients/patients-delete.html"
     success_url = reverse_lazy('patients_search_path')
 
 
-class Patient_Update(UpdateView):
+class Patient_Update(LoginRequiredMixin, UpdateView):
     model = Patients
     template_name = "patients/patients-modify.html"
     fields = ['name', 'lastname', 'weight', 'height', 'bloodGlucose', 'triglycerides']

@@ -4,12 +4,14 @@ from django.urls import reverse_lazy
 from doctors.models import Doctors
 from doctors.forms import Doctors_Create, Doctors_Update
 
+from django.contrib.auth.decorators import login_required
+
 def doctors_index(request):
     return render(request, 'doctors/doctors-index.html', {})
 
+@login_required
 def doctors_create(request):
     
-
     if request.method == 'POST':
         doctors_form = Doctors_Create(request.POST)
         if doctors_form.is_valid():
@@ -37,7 +39,7 @@ def doctors_view(request):
 
     return render(request, 'doctors/doctors-search.html', {'list_of_doctors': list_of_doctors})
 
-
+@login_required
 def doctors_delete(request, doctor_id):
 
     doctor_to_delete = Doctors.objects.get(id=doctor_id)
@@ -45,7 +47,7 @@ def doctors_delete(request, doctor_id):
 
     return redirect('doctors_search_path')
 
-
+@login_required
 def doctors_update(request, doctor_id):
 
     doctor_to_modify = Doctors.objects.get(id=doctor_id)

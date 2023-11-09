@@ -15,12 +15,10 @@
                             <h1 class="banner_taital">Centro <br><span style="color: #151515;">Nicolson</span></h1>
                             <p class="banner_text">Integrando medicos y pacientes en una sola web</p>
                             
-                            {% if request.user.is_authenticated %}
                             <div class="btn_main">
                                 <div class="more_bt"><a href={% url "patients_index_path" %}>Pacientes</a></div>
                                 <div class="contact_bt"><a href={% url "doctors_index_path" %}>Medicos</a></div>
                             </div>
-                            {% endif %}
 
                         </div>
                     </div>
